@@ -4,7 +4,7 @@
 #
 Name     : R-doMPI
 Version  : 0.2.2
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/doMPI_0.2.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/doMPI_0.2.2.tar.gz
 Summary  : Foreach Parallel Adaptor for the Rmpi Package
@@ -16,7 +16,7 @@ Requires: R-iterators
 BuildRequires : R-Rmpi
 BuildRequires : R-foreach
 BuildRequires : R-iterators
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 BuildRequires : openmpi-dev
 BuildRequires : openssh
 
@@ -31,11 +31,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523302519
+export SOURCE_DATE_EPOCH=1552806151
 
 %install
+export SOURCE_DATE_EPOCH=1552806151
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523302519
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -70,8 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library doMPI|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  doMPI || :
 
 
 %files
