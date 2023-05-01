@@ -4,7 +4,7 @@
 #
 Name     : R-doMPI
 Version  : 0.2.2
-Release  : 48
+Release  : 49
 URL      : https://cran.r-project.org/src/contrib/doMPI_0.2.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/doMPI_0.2.2.tar.gz
 Summary  : Foreach Parallel Adaptor for the Rmpi Package
